@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
+const {publicIpv4} = require('public-ip');
 
 dotenv.config();
 
@@ -12,8 +13,10 @@ app.use(express.json());
 
 app.get('/', async(req, res) => {
     const ip = req.socket.remoteAddress;
+    const pubIp = await publicIpv4();
     res.json({
-        yourIP: ip
+        yourIP: ip,
+        yourPublicIp: pubIp
     })
 })
 
