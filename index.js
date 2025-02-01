@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
 
   console.log({
     loc: ipPRIV,
-    add: req.socket.remoteAddress. 
+    add: req.socket.remoteAddress,
     ia,
     i6,
     ip: ip
@@ -27,7 +27,7 @@ app.get("/", async (req, res) => {
 
   res.json({
     loc: ipPRIV,
-    add: req.socket.remoteAddress. 
+    add: req.socket.remoteAddress,
     ia,
     i6,
     ip: ip
