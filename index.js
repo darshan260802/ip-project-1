@@ -17,6 +17,14 @@ app.get("/", async (req, res) => {
   const ia = await publicIp();
   var ipPRIV = req.headers['x-forwarded-for'] || req.socket.remoteAddress
 
+  console.log({
+    loc: ipPRIV,
+    add: req.socket.remoteAddress. 
+    ia,
+    i6,
+    ip: ip
+  })
+
   res.json({
     loc: ipPRIV,
     add: req.socket.remoteAddress. 
