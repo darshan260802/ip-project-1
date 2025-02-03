@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
-const ipify = require('ipify');
-const { publicIpv4, publicIp, publicIpv6 } = require("public-ip");
 
 const PORT = process.env.PORT || 8000;
 
@@ -13,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  const publicIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  const publicIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   
   // Ensure the IP is public
   const isPublicIP = (ip) => {
