@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
   if (isPublicIP(publicIP)) {
     res.json({ publicIP });
   } else {
-    res.status(400).json({ error: "Could not determine public IP address" });
+    res.status(200).json({ error: "Could not determine public IP address", publicIP });
   }
 });
 
